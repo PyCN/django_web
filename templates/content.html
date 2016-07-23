@@ -1,0 +1,35 @@
+{% extends 'bbs.html' %}
+{% load comments%}
+
+{% block content %}
+<div class="cont">
+<h4>{{bbs.title}}</h4>
+{{bbs.content|safe}}
+</div>
+<hr>
+
+<form action="/comment/" method="post">
+    {% csrf_token %}
+    <textarea cols=100 rows=2 name="comment_content"></textarea>
+    <input type="hidden" name="bbs_id" value="{{bbs.id}}" />
+    <br>
+    <input type="reset" value="取消"><input type="submit" value="评论" id="id_submit" />
+</form>
+
+<div class="">
+    <br>
+    {% get_comment_count for bbs as comment_count %}
+    <span class="glyphicon glyphicon-comment"></span>
+    {{comment_count}}
+</div>
+
+{% get_comment_list for bbs as comment_list %}
+{% for comment in comment_list reversed %}
+<b>{{comment.user}}</b>
+{{comment.submit_date}}
+<br>
+{{comment.comment}}
+<br>
+<br>
+{% endfor %}
+{% endblock %}

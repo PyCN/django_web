@@ -1,0 +1,22 @@
+<!DOCTYPE html >
+<html  xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>登陆</title>
+</head>
+{% block user %}
+<body>
+<h2>你猜股票分享网</h2>
+<form method = 'post' action="/acct_login/">
+    {% csrf_token %}
+
+    <input type="text" name="username" ><span style="color:red">{{login_err}}</span>
+    <br>
+    <input type="password" name="password">
+    <br>
+    <a href="/regist/">注册</a><input type="submit" value = "登陆" />
+</form>
+</body>
+{% endblock %}
+</html>
+

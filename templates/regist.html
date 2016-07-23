@@ -1,0 +1,17 @@
+{% extends 'login.html'%}
+
+{% block user %}
+<h2>加入你猜</h2>
+<form method="POST" action="/regist/">
+    {% csrf_token %}
+    <a>输入用户名：</a><input type="text" name="username">
+     <br>
+    <a>输入邮箱： &nbsp&nbsp</a><input type="email" name="email">
+    <br>
+    <a>输入密码： &nbsp&nbsp</a><input type="password" name="password">
+    <br>
+    <a>确认密码： &nbsp&nbsp</a><input type="password" name="password2">
+    <br>
+    <input type="submit" value="注册">
+</form>
+{% endblock %}
