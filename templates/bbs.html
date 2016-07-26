@@ -75,7 +75,7 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="cont">
        {% for bbs in bbs_list %}
-
+        {% print like_num %}
         <h4><a href="/content/{{bbs.id}}/">{{bbs.title}}</a></h4>
         <ul class="list-inline">
           <li>作者:{{bbs.author.user.username}}</li>
