@@ -15,3 +15,7 @@ nicai股票分享网
 6.允许上传文件
 
 后续扩展：按用户活跃性，所发布内容得到点赞数给用户积分，前三个板块内容所获点赞数多少不可见，在后端进行排序，得到一个点赞数榜单，用户可用积分解锁榜单上的股票。
+
+附截图一张，前端很糙
+
+![image](https://github.com/guanyibing/django-web/raw/master/upload_imgs/web.jpg)
